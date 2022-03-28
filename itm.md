@@ -22,3 +22,25 @@
 + 书
 + 桶 用于装液体，数据在`装液体table`中
 * **零件**
+
+# IB（Item Board，物品管理器）信息
+## 原型
+```jl
+mutable struct IB
+	l::Int
+	n::Vector{UInt8}
+	i::Vector{Item}
+end
+```
+
+## 通用接口
+|函数名|参数类型（第一个参数为IB类型，不再重复）|返回值类型|描述|备注|
+|:-:|:-:|:-:|:-:|:-:|
+|get_n|Int|UInt8|获得数量|`0x0-0xf`对应`1-16`|
+|set_n!|Int,UInt8||设置数量|`0x0-0xf`对应`1-16`|
+|get|Int|Pair{Item,UInt8}|获得数据|`0x0-0xf`对应`1-16`|
+|set!|Int,Pair{Item,UInt8}||设置数据|`0x0-0xf`对应`1-16`|
+|remove!|Int||移除||
+|clear!|||清空||
+|reduce!|Int,Int||减少一定数量||
+|give!|Item,Int||给予一定数量的物品||
