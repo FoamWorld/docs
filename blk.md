@@ -27,7 +27,7 @@
 ## 指定的field
 |名称|类型|描述|
 |:-:|:-:|:-:|
-|background_color|背景色|
+|background_color||背景色|
 |color||颜色|
 |dire|UInt8|朝向，通常是面朝放置者位置，通常范围`0x0~0x3`|
 |ib|IB|物品管理|
